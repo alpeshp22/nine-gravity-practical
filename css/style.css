@@ -406,6 +406,7 @@ body.fiexd {
     width: calc(100% - 280px);
     height: 100%;
     background-color: rgba(0 0 0 / 70%);
+    z-index: 1025;
 }
 /*-------------------------------------
 => END NAVIGATION CLASSES
@@ -613,7 +614,7 @@ body.fiexd {
     .main-navbar .navbar-collapse.show{
         left: 0;
     }
-    .main-navbar .navbar-collapse.show .sidebar-overlay{
+    .main-navbar .sidebar-overlay.show{
         display: block;
     }   
     .main-navbar .navbar-nav {

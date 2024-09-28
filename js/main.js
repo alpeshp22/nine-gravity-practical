@@ -8,6 +8,7 @@ $(document).ready(function () {
   // MENU BUTTON ACTIONS
   $(".menu-btn").on("click", function () {
     $("body").toggleClass("fiexd");
+    $(".sidebar-overlay").toggleClass("show");
   });
 
   // LILY SLIDER
