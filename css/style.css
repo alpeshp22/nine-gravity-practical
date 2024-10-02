@@ -855,11 +855,16 @@ body.fiexd {
         height: 60px;
         left: -30px;
     }
-    .lily-sec .owl-stage-outer {
-        padding-top: 2rem;
+    .ministry-card .d-flex {
+        gap: 10px;
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-start !important;
+        margin-top: 0.5rem !important;
     }
     .ministry-card h5 {
         font-size: 1rem;
+        margin-bottom: 0rem !important;
     }
     .ministry-card h4 {
         font-size: 1.15rem;
@@ -880,7 +885,7 @@ body.fiexd {
         height: 3rem !important;
         margin-bottom: 1rem;
     }
-
+    
     
 }
 /* START 575PX */

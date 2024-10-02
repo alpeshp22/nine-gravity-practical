@@ -13,9 +13,9 @@ $(document).ready(function () {
 
   // MINISTRY SLIDER
   $(".ministry-slider").owlCarousel({
-    items: 1.1,
+    items: 1,
     margin: 15,
-    loop: true,
+    loop: false,
     autoplay: false,
     nav: true,
     dots: true,
