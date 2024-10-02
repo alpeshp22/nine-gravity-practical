@@ -11,33 +11,7 @@ $(document).ready(function () {
     $(".sidebar-overlay").toggleClass("show");
   });
 
-  // LILY SLIDER
-  $(".lilySeekerSlider").owlCarousel({
-    items: 1.3,
-    margin: 40,
-    loop: true,
-    autoplay: true,
-    nav: false,
-    dots: false,
-    animateIn: "fadeIn",
-    animateOut: "fadeOut",
-    responsive: {
-      1199: {
-        margin: 80,
-        items: 4,
-      },
-      799: {
-        margin: 50,
-        items: 3,
-      },
-      575: {
-        margin: 50,
-        items: 2.1,
-      },
-    },
-  });
-
-  // LILY SLIDER
+  // MINISTRY SLIDER
   $(".ministry-slider").owlCarousel({
     items: 1.1,
     margin: 15,
@@ -62,5 +36,30 @@ $(document).ready(function () {
         loop: false,
       },
     },
+  });
+
+  // LILY HORIZONTAL SCROLL SECTION
+  gsap.utils.toArray(".scrollSec").forEach((section) => {
+    if (section.dataset.type === "horizontal") {
+      const cards = section.querySelector(".lily-seeker");
+      const card = section.querySelector(".lily-card");
+
+      gsap.to(cards, {
+        x: () => {
+          return -cards.scrollWidth + card.offsetWidth;
+        },
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".scrollSec",
+          start: () => "center center",
+          end: () => `+=${cards.scrollWidth - card.offsetWidth}`,
+          scrub: true,
+          pin: true,
+          markers: false,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+        },
+      });
+    } else null;
   });
 });

@@ -117,6 +117,23 @@ body.fiexd {
     background-color: var(--purple);
     border-color: var(--purple);
 }
+.arrow-right{
+    position: relative;
+}
+.arrow-right::after{
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 0.5rem;
+    top: 3px;
+    -webkit-mask-image: url(../images/arrow-right.png);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    background-color: var(--white);
+}
 .sec-sub-title{
     font-size: 1.12rem;
     font-weight: 300;
@@ -493,6 +510,28 @@ body.fiexd {
 /*--------------------------------------
 => LILY SEEKER SECTION
 --------------------------------------*/
+.lily-sec{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.lily-seeker{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+.lily-sec .sec-title{ 
+    position: relative;
+    top: 5rem;
+}
 .lily-card{
     position: relative;
     display: block;
@@ -501,7 +540,17 @@ body.fiexd {
     padding: 1.5rem;
     background: linear-gradient(151.41deg, #BED2FB 0%, #F5DADF 60.90%);
     border-radius: 1rem;
+    flex-shrink: 0;
 }
+.lily-sec .lily-card + .lily-card {
+    margin-left: 80px;
+}
+.lily-sec .lily-card{
+    width: 19.5rem;
+    height: auto;
+    min-height: 10rem;
+}
+
 .lily-card .icon{
     width: 4.75rem !important;
     height: 4.75rem !important;
@@ -514,14 +563,20 @@ body.fiexd {
     line-height: 1.8rem;
     margin-bottom: 1.25rem;
 }
-.lily-sec .owl-stage-outer{
-    padding: 3rem 0;
-}
-.lily-sec .owl-item:nth-child(even) .lily-card{
+.lily-sec .lily-card:nth-child(odd){
     transform: rotate(5deg);
 }
-.lily-sec .owl-item:nth-child(odd) .lily-card{
+.lily-sec .lily-card:nth-child(even){
     transform: rotate(-5deg);
+}
+.lily-card.blank{
+    width: 60%;
+    background: none;
+    transform: none !important;
+}
+.lily-card.last{
+    background: none;
+    transform: none !important;
 }
 /*--------------------------------------
 => END LILY SEEKER SECTION
@@ -678,6 +733,9 @@ body.fiexd {
     .animated-gradient {
         width: 100%;
         height: auto;
+    }
+    .lily-sec .sec-title {
+        top: 2rem;
     }
     
 }
